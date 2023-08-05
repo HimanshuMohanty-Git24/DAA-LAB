@@ -26,7 +26,6 @@ double sine(double x, int d)
         i++;
     }
     cout << "Main loop executed " << main_loop << " times" << endl;
-    // c1=log(n)/d
 
     double c1 = (double)log(main_loop) / (double)d;
     cout << "c1 = " << c1 << endl;
