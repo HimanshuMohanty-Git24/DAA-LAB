@@ -1,6 +1,30 @@
-// 2.3 Aim of the experiment: Write a function gcd(k) which returns the GCD of kth and (k+l)th
-// Fibonacci numbers for k>l. Use Euclid's algorithm to calculate the GCD. Count the number of
-// times the GCD loop executes for different values of k and record your observations in the
-// Input: Enter k : 10
-// Output: 10th and 11 th Fibonacci numbers : 34,55
+// Wap to find the k th and k+1 th fibonacci number print it and then find their GCD
+// input : k:10
+// output:
+// 10th and 11th Fibonacci numbers : 34 55
 // GCD = 1
+
+#include <bits/stdc++.h>
+using namespace std;
+int gcd(int a, int b)
+{
+    if (b == 0)
+        return a;
+    return gcd(b, a % b);
+}
+int main()
+{
+    int k;
+    cout << "Enter the value of k: ";
+    cin >> k;
+    int a = 0, b = 1, c;
+    for (int i = 2; i <= k + 1; i++)
+    {
+        c = a + b;
+        a = b;
+        b = c;
+    }
+    cout << k << "th and " << k + 1 << "th Fibonacci numbers : " << a << " " << b << endl;
+    cout << "GCD = " << gcd(a, b) << endl;
+    return 0;
+}
