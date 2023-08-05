@@ -18,7 +18,7 @@ int main()
     cout << "Enter the value of k: ";
     cin >> k;
     int a = 0, b = 1, c;
-    for (int i = 2; i <= k + 1; i++)
+    for (int i = 2; i <= k; i++)
     {
         c = a + b;
         a = b;
