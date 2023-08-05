@@ -15,14 +15,21 @@ double power(double x, int n)
 }
 double sine(double x, int d)
 {
+    int main_loop = 0;
     double sum = 0, term = x, eps = pow(10, -d - 1);
     int i = 1;
     while (abs(term) > eps)
     {
+        main_loop++;
         sum += term;
         term = -term * x * x / (2 * i * (2 * i + 1));
         i++;
     }
+    cout << "Main loop executed " << main_loop << " times" << endl;
+    // c1=log(n)/d
+
+    double c1 = (double)log(main_loop) / (double)d;
+    cout << "c1 = " << c1 << endl;
     return sum;
 }
 int main()
@@ -33,6 +40,7 @@ int main()
     cin >> x;
     cout << "Enter decimal places: ";
     cin >> d;
-    cout << "Sine of " << x << " upto " << d << " decimal places is: " << sine(x, d) << endl;
+    double ans = sine(x, d);
+    cout << "Sine of " << x << " upto " << d << " decimal places is: " << ans << endl;
     return 0;
 }
