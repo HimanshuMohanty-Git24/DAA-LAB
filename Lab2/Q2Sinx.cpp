@@ -5,6 +5,14 @@
 // Output: 0.431
 #include <bits/stdc++.h>
 using namespace std;
+
+double power(double x, int n)
+{
+    double ans = 1;
+    for (int i = 1; i <= n; i++)
+        ans *= x;
+    return ans;
+}
 double sine(double x, int d)
 {
     double sum = 0, term = x, eps = pow(10, -d - 1);
