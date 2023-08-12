@@ -1,14 +1,5 @@
 // 3.1 Aim of the experiment: Write a function recursiveMin(a, n) that recursively computes the
 // minimum value in the input array a and returns it. Initially, n= |a|.
-// Count the depth of recursion for input a of different sizes and record your observations below
-// check if the value of estimated parameter c1 is stable or changing according to the input size. Justify your observation
-// Input: Enter size of array : 100
-// Output: Minimum value = 12
-// Size of problem|a| |Observed depth of recursion d(recur) |Estimated parameter c1 = d(recur)/|a|
-// 100               |
-// 10000             |
-// 1000000           |
-// find the depth of recursion and also find the estimated parameter c1
 #include <bits/stdc++.h>
 
 using namespace std;
