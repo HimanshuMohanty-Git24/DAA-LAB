@@ -8,6 +8,9 @@
 using namespace std;
 int gcd(int a, int b)
 {
+    static int ctr = 0;
+    ctr++;
+    cout << "Call " << ctr << " : a = " << a << " b = " << b << endl;
     if (b == 0)
         return a;
     return gcd(b, a % b);
@@ -25,6 +28,7 @@ int main()
         b = c;
     }
     cout << k << "th and " << k + 1 << "th Fibonacci numbers : " << a << " " << b << endl;
-    cout << "GCD = " << gcd(a, b) << endl;
+    int ans = gcd(a, b);
+    cout << "GCD = " << ans << endl;
     return 0;
 }
