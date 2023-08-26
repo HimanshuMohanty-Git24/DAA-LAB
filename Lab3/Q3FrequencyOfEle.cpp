@@ -18,7 +18,7 @@ vector<int> unique(vector<int> arr)
     vector<int> uniqueArr;
     for (int i = 0; i < max + 1; i++)
     {
-        if (freq[i] == 1)
+        if (freq[i] >= 1)
             uniqueArr.push_back(i);
     }
     return uniqueArr;
