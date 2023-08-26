@@ -6,13 +6,13 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-double power(double x, int n)
-{
-    double ans = 1;
-    for (int i = 1; i <= n; i++)
-        ans *= x;
-    return ans;
-}
+// double power(double x, int n)
+// {
+//     double ans = 1;
+//     for (int i = 1; i <= n; i++)
+//         ans *= x;
+//     return ans;
+// }
 double sine(double x, int d)
 {
     int main_loop = 0;
