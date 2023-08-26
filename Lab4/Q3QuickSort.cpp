@@ -2,6 +2,7 @@
 
 #include <bits/stdc++.h>
 using namespace std;
+static int comp = 0;
 int partition(int arr[], int low, int high)
 {
     int pivot = arr[high];
@@ -22,6 +23,7 @@ void quickSort(int arr[], int low, int high)
 {
     if (low < high)
     {
+        comp++;
         int pi = partition(arr, low, high);
         quickSort(arr, low, pi - 1);
         quickSort(arr, pi + 1, high);
@@ -40,5 +42,8 @@ int main()
     cout << "Sorted array: ";
     for (int i = 0; i < n; i++)
         cout << arr[i] << " ";
+
+    cout << "\nNumber of comparisons: " << comp << endl;
+
     return 0;
 }
