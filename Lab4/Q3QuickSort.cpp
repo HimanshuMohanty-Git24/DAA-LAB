@@ -3,12 +3,14 @@
 #include <bits/stdc++.h>
 using namespace std;
 static int comp = 0;
+
 int partition(int arr[], int low, int high)
 {
     int pivot = arr[high];
     int i = low - 1;
     for (int j = low; j <= high - 1; j++)
     {
+        comp++; // Increment the comparison count here
         if (arr[j] < pivot)
         {
             i++;
@@ -18,17 +20,17 @@ int partition(int arr[], int low, int high)
     swap(arr[i + 1], arr[high]);
     return i + 1;
 }
-// Find the number of comparisions in Quick Sort
+
 void quickSort(int arr[], int low, int high)
 {
     if (low < high)
     {
-        comp++;
         int pi = partition(arr, low, high);
         quickSort(arr, low, pi - 1);
         quickSort(arr, pi + 1, high);
     }
 }
+
 int main()
 {
     int n, x;
