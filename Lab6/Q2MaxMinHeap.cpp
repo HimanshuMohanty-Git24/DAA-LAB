@@ -4,7 +4,6 @@
 
 using namespace std;
 
-// Helper function to perform max-heapify
 void maxHeapify(vector<int> &arr, int n, int i)
 {
     int largest = i;
@@ -24,7 +23,6 @@ void maxHeapify(vector<int> &arr, int n, int i)
     }
 }
 
-// Helper function to perform min-heapify
 void minHeapify(vector<int> &arr, int n, int i)
 {
     int smallest = i;
@@ -44,23 +42,20 @@ void minHeapify(vector<int> &arr, int n, int i)
     }
 }
 
-// Build alternating min-max heap
 void buildAlternatingHeap(vector<int> &arr, int n)
 {
-    // Build max heap starting from index 1
-    for (int i = 1; i < n; i += 2)
+
+    for (int i = n / 2 - 1; i >= 0; i--)
     {
-        maxHeapify(arr, n, i);
+        maxHeapify(arr, n, 2 * i + 1);
     }
 
-    // Build min heap starting from index 0
-    for (int i = 0; i < n; i += 2)
+    for (int i = n / 2 - 1; i >= 0; i--)
     {
-        minHeapify(arr, n, i);
+        minHeapify(arr, n, 2 * i);
     }
 }
 
-// Display the elements of the array
 void display(vector<int> &arr)
 {
     for (int value : arr)
@@ -72,16 +67,16 @@ void display(vector<int> &arr)
 
 int main()
 {
-    int n;
-    cout << "Enter size of array: ";
-    cin >> n;
+    int n = 11;
+    // cout << "Enter size of array: ";
+    // cin >> n;
 
-    vector<int> arr(n);
-    cout << "Enter elements of the array: ";
-    for (int i = 0; i < n; i++)
-    {
-        cin >> arr[i];
-    }
+    vector<int> arr = {20, 15, 18, 10, 8, 12, 9, 6, 4, 8, 10};
+    // cout << "Enter elements of the array: ";
+    // for (int i = 0; i < n; i++)
+    // {
+    //     cin >> arr[i];
+    // }
 
     buildAlternatingHeap(arr, n);
 
